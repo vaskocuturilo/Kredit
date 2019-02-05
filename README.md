@@ -14,6 +14,7 @@ to run test ```mvn clean test```
 to generate report ```mvn site```
 
 ![](https://c.radikal.ru/c23/1902/c4/91120a81114b.png)
+
 ![](https://c.radikal.ru/c41/1902/f3/a86573ca8630.png)
 
 
