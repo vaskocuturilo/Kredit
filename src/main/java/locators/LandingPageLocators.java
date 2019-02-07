@@ -13,7 +13,7 @@ public class LandingPageLocators {
     /**
      * The constant AMOUNT_DROP_DOWN.
      */
-    protected static final String AMOUNT_DROP_DOWN = "#root div:nth-child(1) > label > div.Select.Calulator__form-field.Calulator__select.customSelect.has-value.Select--single div.Select-multi-value-wrapper";
+    protected static final String AMOUNT_DROP_DOWN = "#root div:nth-child(1) > label > div.Select.Calulator__form-field.Calulator__select.customSelect.has-value.Select--single";
     /**
      * The constant MONTH_DROP_DOWN.
      */
