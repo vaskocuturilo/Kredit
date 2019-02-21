@@ -4,28 +4,42 @@ package locators;
  * Class LoanPageLocators.
  */
 public class LoanPageLocators {
+
     /**
-     * The constant NAVIGATE_TO_PERSON_BUTTON.
+     * The constant SELECT_MENU_OUTER.
      */
-    protected static final String NAVIGATE_TO_PERSON_BUTTON = "#root div.header__logo";
+    protected static final String SELECT_MENU_OUTER = "div.Select-menu-outer div.Select-option";
+
     /**
-     * The constant LOGIN_FORM_LINK_BUTTON.
+     * The constant AMOUNT_DROP_DOWN.
      */
-    protected static final String LOGIN_FORM_LINK_BUTTON = "div.LoginForm__container.TopMenu__login-nav-item button";
+    protected static final String AMOUNT_DROP_DOWN = "#root div:nth-child(1) > label > div.Select.Calulator__form-field.Calulator__select.customSelect.has-value.Select--single";
     /**
-     * The constant LOGIN_FORM_SUBMIT_BUTTON.
+     * The constant MONTH_DROP_DOWN.
      */
-    protected static final String LOGIN_FORM_SUBMIT_BUTTON = "div.LoginForm__container.TopMenu__login-nav-item";
+    protected static final String MONTH_DROP_DOWN = "#myselect2";
     /**
-     * The constant ERROR_MESSAGE_OF_LOGIN_FIELD.
+     * The constant CATEGORY_DROP_DOWN.
      */
-    protected static final String ERROR_MESSAGE_OF_LOGIN_FIELD = "div.LoginForm__container.TopMenu__login-nav-item div.FieldWrapper__error-message.FieldWrapper__error-message";
+    protected static final String CATEGORY_DROP_DOWN = "div:nth-child(4) div.Select.Calulator__form-field.Calulator__select.customSelect.has-value.Select--single";
+
     /**
-     * The constant EMAIL_FIELD.
+     * The constant KREDIT_STARTEN_BUTTON.
      */
-    protected static final String EMAIL_FIELD = "div.LoginForm__container.TopMenu__login-nav-item input[name='email']";
+    protected static final String KREDIT_STARTEN_BUTTON = "a[type='submit']";
+
     /**
-     * The constant PASSWORD_FIELD.
+     * The constant VEHICLE_PRICE.
      */
-    protected static final String PASSWORD_FIELD = "div.LoginForm__container.TopMenu__login-nav-item input[name='password']";
+    protected static final String VEHICLE_PRICE = "input[name='vehiclePrice']";
+
+    /**
+     * The constant INITIAL_PAYMENT.
+     */
+    protected static final String INITIAL_PAYMENT = "input[name='initialPayment']";
+
+    /**
+     * The constant CONTACT_INFO_FORM.
+     */
+    protected static final String CONTACT_INFO_FORM = "form[id='form_LeadStep2Kreditnehmer_ContactInfo']";
 }

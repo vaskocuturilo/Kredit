@@ -2,84 +2,113 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import locators.LoanPageLocators;
+import utils.PropertiesReader;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.executeJavaScript;
-import static org.testng.Assert.assertEquals;
+import static com.codeborne.selenide.Selenide.*;
 
 /**
- * Class Loanpage.
+ * Class Landing page.
  */
 public class LoanPage extends LoanPageLocators {
     /**
-     * Method clickOnNavigateToPersonButton.
+     * Navigate to main page landing page.
      *
-     * @return the loan page
+     * @return the landing page
      */
-    public LoanPage clickOnNavigateToPersonButton() {
-        $(NAVIGATE_TO_PERSON_BUTTON).click();
+    public LoanPage navigateToMainPage() {
+        open(PropertiesReader.getProperty("URL"));
         return this;
     }
 
     /**
-     * Method clickOnAnmeldenLoginForm.
+     * Method openAmountDropDown.
      *
-     * @return the loan page
+     * @return the landing page
      */
-    public LoanPage clickOnAnmeldenLoginForm() {
-        $(LOGIN_FORM_LINK_BUTTON).click();
+    public LoanPage openAmountDropDown() {
+        $(AMOUNT_DROP_DOWN).click();
         return this;
     }
 
     /**
-     * Method clickOnSubmitLoginFormButton.
+     * Method openCategoryDropDown.
      *
-     * @return the loan page
+     * @return the landing page
      */
-    public LoanPage clickOnSubmitLoginFormButton() {
-        $(LOGIN_FORM_SUBMIT_BUTTON).click();
+    public LoanPage openCategoryDropDown() {
+        $(CATEGORY_DROP_DOWN).click();
         return this;
     }
 
     /**
-     * Method checkThatPageIsCompletelyLoaded.
-     *
-     * @return the loan page
-     */
-    public LoanPage checkThatPageIsCompletelyLoaded() {
-        assertEquals("complete", executeJavaScript("return document.readyState"));
-        return this;
-    }
-
-    /**
-     * Method checkThatErrorMessageIsPresent.
-     *
-     * @return the loan page
-     */
-    public LoanPage checkThatErrorMessageIsPresent() {
-        $(ERROR_MESSAGE_OF_LOGIN_FIELD).shouldBe(Condition.visible);
-        return this;
-    }
-
-    /**
-     * Method enterEmail.
+     * Method selectValue.
      *
      * @param value the value
-     * @return the loan page
+     * @return the landing page
      */
-    public LoanPage enterEmail(final String value) {
-        $(EMAIL_FIELD).setValue(value);
+    public LoanPage selectValue(final String value) {
+        $$(SELECT_MENU_OUTER).find(Condition.text(value)).click();
         return this;
     }
 
     /**
-     * Method enterPassword.
+     * Method selectAmount.
      *
      * @param value the value
+     * @return the landing page
+     */
+    public LoanPage selectAmount(final String value) {
+        openAmountDropDown();
+        selectValue(value);
+        return this;
+    }
+
+    /**
+     * Method select Kaufpreis.
+     *
+     * @param value value.
+     * @return the landing page
+     */
+    public LoanPage selectKaufpreis(final String value) {
+
+        $(VEHICLE_PRICE).setValue(value);
+
+        return this;
+    }
+
+    /**
+     * Method select Anzahlung.
+     *
+     * @param value value.
+     * @return the landing page
+     */
+    public LoanPage selectAnzahlung(final String value) {
+
+        $(INITIAL_PAYMENT).setValue(value);
+
+        return this;
+    }
+
+    /**
+     * Method selectLaufzeitCategory.
+     *
+     * @param value value.
+     * @return the landing page
+     */
+    public LoanPage selectLaufzeitCategory(final String value) {
+        openCategoryDropDown();
+        selectValue(value);
+        return this;
+    }
+
+    /**
+     * Method clickOnKreditvergleichStarten.
+     *
      * @return the loan page
      */
-    public LoanPage enterPassword(final String value) {
-        $(PASSWORD_FIELD).setValue(value);
-        return this;
+    public LandingPage clickOnKreditvergleichStarten() {
+        $(KREDIT_STARTEN_BUTTON).click();
+        $(CONTACT_INFO_FORM).shouldBe(Condition.visible);
+        return new LandingPage();
     }
 }

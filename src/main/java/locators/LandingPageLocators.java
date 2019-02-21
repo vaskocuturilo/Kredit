@@ -4,42 +4,28 @@ package locators;
  * Class LandingPageLocators.
  */
 public class LandingPageLocators {
-
     /**
-     * The constant SELECT_MENU_OUTER.
+     * The constant NAVIGATE_TO_PERSON_BUTTON.
      */
-    protected static final String SELECT_MENU_OUTER = "div.Select-menu-outer div.Select-option";
-
+    protected static final String NAVIGATE_TO_PERSON_BUTTON = "#root div.header__logo";
     /**
-     * The constant AMOUNT_DROP_DOWN.
+     * The constant LOGIN_FORM_LINK_BUTTON.
      */
-    protected static final String AMOUNT_DROP_DOWN = "#root div:nth-child(1) > label > div.Select.Calulator__form-field.Calulator__select.customSelect.has-value.Select--single";
+    protected static final String LOGIN_FORM_LINK_BUTTON = "div.LoginForm__container.TopMenu__login-nav-item button";
     /**
-     * The constant MONTH_DROP_DOWN.
+     * The constant LOGIN_FORM_SUBMIT_BUTTON.
      */
-    protected static final String MONTH_DROP_DOWN = "#myselect2";
+    protected static final String LOGIN_FORM_SUBMIT_BUTTON = "div.LoginForm__container.TopMenu__login-nav-item";
     /**
-     * The constant CATEGORY_DROP_DOWN.
+     * The constant ERROR_MESSAGE_OF_LOGIN_FIELD.
      */
-    protected static final String CATEGORY_DROP_DOWN = "div:nth-child(4) div.Select.Calulator__form-field.Calulator__select.customSelect.has-value.Select--single";
-
+    protected static final String ERROR_MESSAGE_OF_LOGIN_FIELD = "div.LoginForm__container.TopMenu__login-nav-item div.FieldWrapper__error-message.FieldWrapper__error-message";
     /**
-     * The constant KREDIT_STARTEN_BUTTON.
+     * The constant EMAIL_FIELD.
      */
-    protected static final String KREDIT_STARTEN_BUTTON = "a[type='submit']";
-
+    protected static final String EMAIL_FIELD = "div.LoginForm__container.TopMenu__login-nav-item input[name='email']";
     /**
-     * The constant VEHICLE_PRICE.
+     * The constant PASSWORD_FIELD.
      */
-    protected static final String VEHICLE_PRICE = "input[name='vehiclePrice']";
-
-    /**
-     * The constant INITIAL_PAYMENT.
-     */
-    protected static final String INITIAL_PAYMENT = "input[name='initialPayment']";
-
-    /**
-     * The constant CONTACT_INFO_FORM.
-     */
-    protected static final String CONTACT_INFO_FORM = "form[id='form_LeadStep2Kreditnehmer_ContactInfo']";
+    protected static final String PASSWORD_FIELD = "div.LoginForm__container.TopMenu__login-nav-item input[name='password']";
 }

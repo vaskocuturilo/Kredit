@@ -2,14 +2,14 @@ package smoke;
 
 import driver.BaseTest;
 import org.testng.annotations.Test;
-import pages.LandingPage;
+import pages.LoanPage;
 import ru.yandex.qatools.allure.annotations.Title;
 
 public class LoginWithIncorrectData extends BaseTest {
     @Title("Navigate to Auto(Credit) tab > Login with incorrect data")
     @Test
     public void loginAndLogOut() {
-        new LandingPage()
+        new LoanPage()
                 .navigateToMainPage()
                 .selectAmount("Auto / Motorrad")
                 .selectKaufpreis("11000")

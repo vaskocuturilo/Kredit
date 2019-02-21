@@ -2,113 +2,84 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import locators.LandingPageLocators;
-import utils.PropertiesReader;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.executeJavaScript;
+import static org.testng.Assert.assertEquals;
 
 /**
- * Class Landing page.
+ * Class Loanpage.
  */
 public class LandingPage extends LandingPageLocators {
     /**
-     * Navigate to main page landing page.
-     *
-     * @return the landing page
-     */
-    public LandingPage navigateToMainPage() {
-        open(PropertiesReader.getProperty("URL"));
-        return this;
-    }
-
-    /**
-     * Method openAmountDropDown.
-     *
-     * @return the landing page
-     */
-    public LandingPage openAmountDropDown() {
-        $(AMOUNT_DROP_DOWN).click();
-        return this;
-    }
-
-    /**
-     * Method openCategoryDropDown.
-     *
-     * @return the landing page
-     */
-    public LandingPage openCategoryDropDown() {
-        $(CATEGORY_DROP_DOWN).click();
-        return this;
-    }
-
-    /**
-     * Method selectValue.
-     *
-     * @param value the value
-     * @return the landing page
-     */
-    public LandingPage selectValue(final String value) {
-        $$(SELECT_MENU_OUTER).find(Condition.text(value)).click();
-        return this;
-    }
-
-    /**
-     * Method selectAmount.
-     *
-     * @param value the value
-     * @return the landing page
-     */
-    public LandingPage selectAmount(final String value) {
-        openAmountDropDown();
-        selectValue(value);
-        return this;
-    }
-
-    /**
-     * Method select Kaufpreis.
-     *
-     * @param value value.
-     * @return the landing page
-     */
-    public LandingPage selectKaufpreis(final String value) {
-
-        $(VEHICLE_PRICE).setValue(value);
-
-        return this;
-    }
-
-    /**
-     * Method select Anzahlung.
-     *
-     * @param value value.
-     * @return the landing page
-     */
-    public LandingPage selectAnzahlung(final String value) {
-
-        $(INITIAL_PAYMENT).setValue(value);
-
-        return this;
-    }
-
-    /**
-     * Method selectLaufzeitCategory.
-     *
-     * @param value value.
-     * @return the landing page
-     */
-    public LandingPage selectLaufzeitCategory(final String value) {
-        openCategoryDropDown();
-        selectValue(value);
-        return this;
-    }
-
-    /**
-     * Method clickOnKreditvergleichStarten.
+     * Method clickOnNavigateToPersonButton.
      *
      * @return the loan page
      */
-    public LoanPage clickOnKreditvergleichStarten() {
-        $(KREDIT_STARTEN_BUTTON).click();
-        $(CONTACT_INFO_FORM).shouldBe(Condition.visible);
-        return new LoanPage();
+    public LandingPage clickOnNavigateToPersonButton() {
+        $(NAVIGATE_TO_PERSON_BUTTON).click();
+        return this;
+    }
+
+    /**
+     * Method clickOnAnmeldenLoginForm.
+     *
+     * @return the loan page
+     */
+    public LandingPage clickOnAnmeldenLoginForm() {
+        $(LOGIN_FORM_LINK_BUTTON).click();
+        return this;
+    }
+
+    /**
+     * Method clickOnSubmitLoginFormButton.
+     *
+     * @return the loan page
+     */
+    public LandingPage clickOnSubmitLoginFormButton() {
+        $(LOGIN_FORM_SUBMIT_BUTTON).click();
+        return this;
+    }
+
+    /**
+     * Method checkThatPageIsCompletelyLoaded.
+     *
+     * @return the loan page
+     */
+    public LandingPage checkThatPageIsCompletelyLoaded() {
+        assertEquals("complete", executeJavaScript("return document.readyState"));
+        return this;
+    }
+
+    /**
+     * Method checkThatErrorMessageIsPresent.
+     *
+     * @return the loan page
+     */
+    public LandingPage checkThatErrorMessageIsPresent() {
+        $(ERROR_MESSAGE_OF_LOGIN_FIELD).shouldBe(Condition.visible);
+        return this;
+    }
+
+    /**
+     * Method enterEmail.
+     *
+     * @param value the value
+     * @return the loan page
+     */
+    public LandingPage enterEmail(final String value) {
+        $(EMAIL_FIELD).setValue(value);
+        return this;
+    }
+
+    /**
+     * Method enterPassword.
+     *
+     * @param value the value
+     * @return the loan page
+     */
+    public LandingPage enterPassword(final String value) {
+        $(PASSWORD_FIELD).setValue(value);
+        return this;
     }
 }
