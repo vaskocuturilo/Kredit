@@ -11,7 +11,18 @@
 ## Instructions how to run:
 Execute command 
 to run test ```mvn clean test```
-to generate report ```mvn site```
+
+### Generate Allure report 
+
+```mvn allure:report```
+
+### Open Allure report in browser
+
+```mvn allure:serve```
+
+**List of technologies**: Java 8, Gradle, Selenide/Selenium, TestNG, Allure, PageObject.
+
+**Note**: You should have installed Chrome browser, Maven.
 
 ![](https://c.radikal.ru/c23/1902/c4/91120a81114b.png)
 
